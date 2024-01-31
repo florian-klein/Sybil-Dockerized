@@ -1,0 +1,5 @@
+{
+  "SERVER_PORT": 3000,
+  "UPLOAD_FOLDER": "uploads",
+  "ALLOWED_EXTENSIONS": ["dcm"]
+}

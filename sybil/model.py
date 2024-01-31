@@ -1,7 +1,8 @@
-from typing import NamedTuple, Union, Dict, List, Optional
+from typing import NamedTuple, Union, List, Optional
 import os
 from argparse import Namespace
 import gdown
+import logging
 
 import torch
 import numpy as np
@@ -283,6 +284,7 @@ class Sybil:
         """
         scores = []
         for sybil in self.ensemble:
+            logging.info(f"Predicting with {sybil}")
             pred = self._predict(sybil, series)
             scores.append(pred)
         scores = np.mean(np.array(scores), axis=0)
